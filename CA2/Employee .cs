@@ -10,14 +10,6 @@ namespace CA2
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-       
-
-        public virtual decimal CalculateMonthlyPay()
-        {
-            return 1 * 2;
-        }
-
-
-
+        public decimal CalculateMonthlyPay { get; set; }
     }
 }

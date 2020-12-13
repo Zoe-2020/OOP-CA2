@@ -10,6 +10,15 @@ namespace CA2
     {
         public decimal HourlyRate { get; set; }
 
-        public double HoursWorked { get; set; }
+        public decimal HoursWorked { get; set; }
+
+        public string days { get; set; }
+
+        public int age { get; set; }
+
+        public virtual decimal CalculateMonthlyPay()
+        {
+            return HourlyRate *  HoursWorked;
+        }
     }
 }
