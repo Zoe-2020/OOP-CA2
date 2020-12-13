@@ -26,13 +26,16 @@ namespace CA2
         {
             InitializeComponent();
         }
-
-        private void EmployeeLB_Loaded(object sender, RoutedEventArgs e)
-        {
-            string[] FirstName = { "Jane", "Joe", "John", "Jess" };
-            string[] LastName = { "Jones", "Murphy", "Smith", "Walsh" };
-            EmployeeLB.ItemsSource = FirstName;
+        
             
+
+
+            private void EmployeeLB_Loaded(object sender, RoutedEventArgs e)
+            {
+                string[] FirstName = { "Jane", "Joe", "John", "Jess" };
+                string[] LastName = { "Jones", "Murphy", "Smith", "Walsh" };
+                EmployeeLB.ItemsSource = FirstName;
+
         }
     }
 }
