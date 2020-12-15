@@ -13,30 +13,20 @@ namespace CA2
 
         public string Shift {get; set;}
 
-       
-            
 
-        
+         public abstract decimal CalculateMonthlyPay();
 
-
-
-        // public abstract decimal CalculateMonthlyPay();
-
-        /*   public Employee(string firstName, string lastName)
-           {
-               FirstName = firstName;
-               LastName = lastName;
-
-           } */
-        /* public override string ToString()
-         {
-             return string.Format($"{LastName.ToUpper()},{FirstName}");
-         } */
+      
     }
      class FullTimeEmployee : Employee
     {
 
         public decimal Salary { get; set; }
+
+        public override decimal CalculateMonthlyPay()
+        {
+            return Salary / 12;
+        } 
 
         public FullTimeEmployee (string firstName, string lastName,string shift ,decimal salary)
         {
@@ -50,22 +40,15 @@ namespace CA2
         {
             return string.Format($"{LastName.ToUpper()},{FirstName}-{Shift}");
         }
-        /*  public decimal Salary { get; set; }
+      //  public decimal Salary { get; set; }
 
         //  public string Shift { get; set; }
        //   public int NumHoildaysDays { get; set; }
 
 
-          public  FullTimeEmployee (string firstName, string lastName,decimal salary)
-          {
-              salary = Salary;
+      
 
-          }
-
-          CalculateMonthlyPay()
-          {
-              return Salary / 12;
-          } */
+          
 
     }
 
@@ -74,10 +57,15 @@ namespace CA2
 
         public decimal Salary { get; set; }
         public decimal HourlyRate { get; set; }
-        public double HoursWorked { get; set; }
+        public decimal HoursWorked { get; set; }
+
+        public override decimal CalculateMonthlyPay()
+        {
+            return HourlyRate * HoursWorked;
+        }
 
 
-        public PartTimeEmployee(string firstName, string lastName,string shift, decimal hourlyRate , double hoursWorked)
+        public PartTimeEmployee(string firstName, string lastName,string shift, decimal hourlyRate , decimal hoursWorked)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -90,22 +78,12 @@ namespace CA2
         {
             return string.Format($"{LastName.ToUpper()},{FirstName}-{Shift}");
         }
-        /*  public decimal Salary { get; set; }
+
+        //  public decimal Salary { get; set; }
 
         //  public string Shift { get; set; }
        //   public int NumHoildaysDays { get; set; }
 
-
-          public  FullTimeEmployee (string firstName, string lastName,decimal salary)
-          {
-              salary = Salary;
-
-          }
-
-          CalculateMonthlyPay()
-          {
-              return Salary / 12;
-          } */
 
     }
 }
