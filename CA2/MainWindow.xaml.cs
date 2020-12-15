@@ -37,13 +37,6 @@ namespace CA2
         private void EmployeeLB_Loaded(object sender, RoutedEventArgs e)
         {
 
-
-            // string[] LastName = { "Jones", "Murphy", "Smith", "Walsh" };
-            /* Employee e1 = new Employee("Jane", "Jones");
-             Employee e2 = new Employee("Joe", "Murphy");
-             Employee e3 = new Employee("John", "Smith");
-             Employee e4 = new Employee("Jess", "Walsh"); */
-
             PartTimeEmployee e1 = new PartTimeEmployee("Jane", "Jones", "Part Time", 5, 88);
             FullTimeEmployee e2 = new FullTimeEmployee("Joe", "Murphy","Full Time", 5000);
             PartTimeEmployee e3 = new PartTimeEmployee("John", "Smith", "Part Time",8,9);
@@ -60,12 +53,14 @@ namespace CA2
             fullTimeEmployees.Add(e4);
 
 
-
+          
 
 
             employees.OrderBy(x => x.LastName).ThenBy(x => x.FirstName);
             partTimeEmployees.OrderBy(x => x.LastName).ThenBy(x => x.FirstName);
             fullTimeEmployees.OrderBy(x => x.LastName).ThenBy(x => x.FirstName);
+
+           
 
 
 
@@ -76,7 +71,7 @@ namespace CA2
 
         private void FirstNameTBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            FirstNameTBox.Clear();
+            
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
@@ -153,21 +148,12 @@ namespace CA2
 
         private void SurnameTBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            SurnameTBox.Clear();
+            
         }
 
         private void FullTimeCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-          
-
-
-         /*   if ((PartTimeCheckBox.IsChecked != false) && (FullTimeCheckBox.IsChecked == false))
-            {
-                EmployeeLB.ItemsSource = partTimeEmployees;
-                
-            } */
-           
-            
+  
            
 
             if (FullTimeCheckBox.IsChecked != false) 
@@ -177,6 +163,7 @@ namespace CA2
                 if (PartTimeCheckBox.IsChecked != false)
                 {
                     EmployeeLB.ItemsSource = employees;
+                   
                 }
             }
             
@@ -194,6 +181,7 @@ namespace CA2
                 if (FullTimeCheckBox.IsChecked != false)
                 {
                     EmployeeLB.ItemsSource = employees;
+                    
                 }
 
             }
@@ -238,6 +226,98 @@ namespace CA2
             monthlyPayTxtBlock.Text = String.Empty; 
 
 
+        }
+
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+           
+            FullTimeEmployee changeSelFullTimeEmp = EmployeeLB.SelectedItem as FullTimeEmployee;
+            PartTimeEmployee changeSelPartTimeEmp = EmployeeLB.SelectedItem as PartTimeEmployee;
+
+    
+           
+
+                for (int x = 0; x < fullTimeEmployees.Count; x++)
+            {
+                if (changeSelFullTimeEmp == fullTimeEmployees[x])
+                {
+                    string changedFullTime = FirstNameTBox.Text;
+                    string changedPartTime = SurnameTBox.Text;
+                    decimal changedSalary = decimal.Parse(SalaryTBox.Text);
+
+                    fullTimeEmployees[x].FirstName = changedFullTime;
+                    fullTimeEmployees[x].LastName = changedPartTime;
+                    fullTimeEmployees[x].Salary = changedSalary;
+
+                    EmployeeLB.ItemsSource = null;
+                    EmployeeLB.ItemsSource = fullTimeEmployees;
+                }
+            }
+            for (int z = 0; z < partTimeEmployees.Count; z++)
+            {
+                if (changeSelPartTimeEmp == partTimeEmployees[z])
+                {
+                    string changedFullTime = FirstNameTBox.Text;
+                    string changedPartTime = SurnameTBox.Text;
+                    decimal changedHourlyRate = decimal.Parse(HourlyRateTBox.Text);
+                    decimal changedHoursWorked = decimal.Parse(HoursWorkedTBox.Text);
+
+                    partTimeEmployees[z].FirstName = changedFullTime;
+                    partTimeEmployees[z].LastName = changedPartTime;
+                    partTimeEmployees[z].HourlyRate = changedHourlyRate;
+                    partTimeEmployees[z].HoursWorked = changedHoursWorked;
+
+                    EmployeeLB.ItemsSource = partTimeEmployees;
+                }
+
+            }
+
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Employee delSelecetEmpl = EmployeeLB.SelectedItem as Employee;
+            FullTimeEmployee delSelecetFullTimeEmpl = EmployeeLB.SelectedItem as FullTimeEmployee;
+            PartTimeEmployee delSelecetPartTimeEmpl = EmployeeLB.SelectedItem as PartTimeEmployee;
+
+
+            for (int z = 0; z < fullTimeEmployees.Count; z++)
+            {
+                if (delSelecetFullTimeEmpl == fullTimeEmployees[z])
+                {
+                    fullTimeEmployees.RemoveAt(z);
+                    
+                }
+                    EmployeeLB.ItemsSource = null;
+                    EmployeeLB.ItemsSource = fullTimeEmployees;
+
+                
+            }
+            for (int x = 0; x < partTimeEmployees.Count; x++)
+            {
+                if (delSelecetPartTimeEmpl == partTimeEmployees[x])
+                {
+                    partTimeEmployees.RemoveAt(x);
+
+                    EmployeeLB.ItemsSource = null;
+                    EmployeeLB.ItemsSource = partTimeEmployees;
+
+                }
+              
+
+            }
+
+            for (int Q = 0; Q < employees.Count; Q++)
+            {
+                if (delSelecetEmpl == employees[Q])
+                {
+                    employees.RemoveAt(Q);
+                    EmployeeLB.ItemsSource = null;
+                    EmployeeLB.ItemsSource = employees;
+                }
+
+            }
         }
     }
 }
