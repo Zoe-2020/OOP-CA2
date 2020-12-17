@@ -13,11 +13,11 @@
         <Button x:Name="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="668,156,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.151,0.371" Click="AddBtn_Click"/>
         <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Left" Margin="668,236,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.244,0.556" Click="UpdateBtn_Click"/>
         <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="668,303,0,0" VerticalAlignment="Top" Width="75" Click="DeleteBtn_Click"/>
-        <TextBox x:Name="FirstNameTBox" HorizontalAlignment="Left" Height="23" Margin="460,53,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="120" GotFocus="FirstNameTBox_GotFocus"/>
-        <TextBox x:Name="SurnameTBox" HorizontalAlignment="Left" Height="23" Margin="460,107,0,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="120" GotFocus="SurnameTBox_GotFocus"/>
-        <TextBox x:Name="SalaryTBox" HorizontalAlignment="Left" Height="23" Margin="460,209,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="HoursWorkedTBox" HorizontalAlignment="Left" Height="23" Margin="460,269,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.464,-0.384"/>
-        <TextBox x:Name="HourlyRateTBox" HorizontalAlignment="Left" Height="23" Margin="460,318,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FirstNameTBox" HorizontalAlignment="Left" Height="23" Margin="460,53,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="SurnameTBox" HorizontalAlignment="Left" Height="23" Margin="460,107,0,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="SalaryTBox" HorizontalAlignment="Left" Height="23" Margin="460,209,0,0" TextWrapping="Wrap" Text="salary" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="HoursWorkedTBox" HorizontalAlignment="Left" Height="23" Margin="460,269,0,0" TextWrapping="Wrap" Text="Hours Worked" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.464,-0.384"/>
+        <TextBox x:Name="HourlyRateTBox" HorizontalAlignment="Left" Height="23" Margin="460,318,0,0" TextWrapping="Wrap" Text="hours Rate" VerticalAlignment="Top" Width="120"/>
         <RadioButton x:Name="FtRBtn" Content="FT" HorizontalAlignment="Left" Margin="460,162,0,0" VerticalAlignment="Top" GroupName="FullPartRBtn"/>
         <RadioButton x:Name="PtRBtn" Content="PT" HorizontalAlignment="Left" Margin="547,165,0,0" VerticalAlignment="Top" GroupName="FullPartRBtn"/>
         <Label x:Name="FnLabel" Content="First Name" HorizontalAlignment="Left" Margin="366,53,0,0" VerticalAlignment="Top" Height="23"/>

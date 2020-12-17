@@ -40,15 +40,6 @@ namespace CA2
         {
             return string.Format($"{LastName.ToUpper()},{FirstName}-{Shift}");
         }
-      //  public decimal Salary { get; set; }
-
-        //  public string Shift { get; set; }
-       //   public int NumHoildaysDays { get; set; }
-
-
-      
-
-          
 
     }
 
@@ -79,11 +70,6 @@ namespace CA2
             return string.Format($"{LastName.ToUpper()},{FirstName}-{Shift}");
         }
 
-        //  public decimal Salary { get; set; }
-
-        //  public string Shift { get; set; }
-       //   public int NumHoildaysDays { get; set; }
-
-
+     
     }
 }
